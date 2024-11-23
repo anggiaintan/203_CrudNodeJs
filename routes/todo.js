@@ -1,24 +1,29 @@
 const express = require('express');
 const router = express.Router();
 
-let todos = [{
-    id: 1, task: "Belajar Node.Js", completed: false
+let todos = [
+    {
+        id: 1, task: "Belajar Node.Js", completed: false
+    },
+    {
+    id: 2, task: "Membuat API", completed: false
+    },
+];
 
-},
-{
-    id: 2, task: "Membuat API", completed: false},];
+//Endpoint untuk mendapatkan data todos
+router.get('/', (req, res) => {
+    res.json(todos);
+});
 
-    //Endpoint untuk mendapatkan data todos
-    router.get('/', (req, res) => {res.json(todos); });
-
-    router.post('/', (req, res) => {
-        const newTodo = {
+router.post('/', (req, res) => {
+    const newTodo = {
         id: todos.length + 1,
         task: req.body.task,
         completed: false
     };
-todos.push(newTodo);
-res.status(201).json(newTodo)});
+    todos.push(newTodo);
+    res.status(201).json(newTodo);
+});
 
 // PUT: Update a todo by ID
 router.put('/:id', (req, res) => {
@@ -55,7 +60,10 @@ router.delete('/:id', (req, res) => {
     } else {
         res.status(404).json({ message: 'Todo not found' });
     }
-});
+}); 
 
 
-    module.exports = router;
+
+
+
+module.exports = router;
