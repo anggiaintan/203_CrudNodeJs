@@ -8,7 +8,7 @@ const expressLayouts = require('express-ejs-layouts')
 const session = require('express-session');
 const authRoutes = require('./routes/authRoutes');
 const { isAuthenticated } = require('./middlewares/middleware.js');
-
+app.use('/public', express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(expressLayouts);
 app.use(express.json());
@@ -47,6 +47,17 @@ app.get('/todo-view', (req, res) => {
         });
     });
 });
+
+app.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error('Error destroying session:', err);
+        return res.redirect('/todo-view'); // Redirect to the todo-view page if there's an error
+      }
+      res.redirect('/login'); // Redirect to the login page after successful logout
+    });
+  });
+
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}/`);

@@ -1,0 +1,106 @@
+/* Mengatur gaya umum untuk seluruh halaman */
+body {
+    font-family: 'Poppins', sans-serif; /* Font modern dengan kesan minimalis */
+    background: linear-gradient(to right, #e0f7fa, #e1bee7); /* Gradien lembut untuk latar belakang */
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Kontainer utama */
+.container {
+    background: #ffffff; /* Latar belakang putih untuk kontras */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lebih kuat untuk kesan "mengapung" */
+    padding: 40px;
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi */
+}
+
+/* Efek hover untuk kontainer */
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Judul */
+h1 {
+    font-size: 40px;
+    color: #3d3d3d;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase; /* Semua huruf besar untuk judul */
+    letter-spacing: 2px; /* Memberikan jarak antar huruf */
+    background: linear-gradient(to right, #ff8a65, #f06292); /* Gradien untuk teks */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Efek teks dengan gradien */
+}
+
+/* Paragraf deskripsi */
+p {
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 30px;
+    line-height: 1.6; /* Memberikan ruang antar baris */
+}
+
+/* Tombol */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(to right, #007bff, #0056b3); /* Gradien untuk tombol */
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+/* Efek hover pada tombol */
+.btn:hover {
+    background: linear-gradient(to right, #0056b3, #003c8f);
+    transform: scale(1.1); /* Tombol lebih besar saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    background-color: gray;
+    padding: 5px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    color: black;
+    font-size: 14px;
+}
+
+/* Responsif untuk perangkat kecil */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}
